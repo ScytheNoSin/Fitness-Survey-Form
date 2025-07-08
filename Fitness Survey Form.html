@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="stylesheetgym.css">
+    
+    <meta charset="UTF-8" />
+    
+    <title>Fitness Survey Form</title>
+
+    <style>
+
+      h1, p {
+  text-align: center;
+  font-family: Tahoma;
+  margin: 1em auto;
+}
+
+p {
+  font-size: 1em;
+  color: #ECDFCC; 
+}
+
+h1 {
+    color: rgb(105, 117, 101);
+}
+
+fieldset {
+  background-color: rgba(105, 117, 101, 0.8);
+  border: none;
+  padding: 1em 0;
+  margin-left: 400px;
+  margin-right: 400px;
+
+}
+
+label {
+  display:block;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+input {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #181C14;
+  border: 1px solid #181C14;
+  color: #ECDFCC;
+}
+
+input[type="text"] {
+  background-color: #181C14 !important;
+  color: #ECDFCC;
+}
+
+/* For Chrome autofill */
+input[type="text"]:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #181C14 inset !important;
+  -webkit-text-fill-color: #ECDFCC !important;
+}
+
+/* For focus and valid states */
+input[type="text"]:focus,
+input[type="text"]:valid {
+  background-color: #181C14 !important;
+  color: #ECDFCC;
+}
+
+input[type="email"] {
+  background-color: #181C14 !important;
+  color: #ECDFCC;
+}
+
+/* For Chrome autofill */
+input[type="email"]:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #181C14 inset !important;
+  -webkit-text-fill-color: #ECDFCC !important;
+}
+
+/* For focus and valid states */
+input[type="email"]:focus,
+input[type="email"]:valid {
+  background-color: #181C14 !important;
+  color: #ECDFCC;
+}
+
+input[type="number"] {
+  background-color: #181C14 !important;
+  color: #ECDFCC;
+  border: 1px solid #181C14;
+}
+
+/* For Chrome autofill */
+input[type="number"]:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #181C14 inset !important;
+  -webkit-text-fill-color: #ECDFCC !important;
+}
+
+/* For focus and valid states */
+input[type="number"]:focus,
+input[type="number"]:valid {
+  background-color: #181C14 !important;
+  color: #ECDFCC;
+}
+
+body {
+  background-image: url("heavyweight.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+select {
+  border: 1px solid #181C14; 
+}
+
+#dropdown {
+    background-color: #181C14;
+    color: #ECDFCC;
+}
+
+input[type="checkbox"] {
+  accent-color: #181C14; /* dark color when unchecked */
+}
+
+input[type="checkbox"]:checked {
+  accent-color: #ECDFCC; /* light color when checked */
+}
+
+/* Custom checkbox styles */
+.custom-checkbox {
+  position: relative;
+  padding-left: 22px; /* smaller padding for smaller box */
+  cursor: pointer;
+  font-size: 1em;
+  user-select: none;
+  display: inline-block;
+  margin-right: 8px; /* less space between checkboxes */
+  margin-bottom: 6px;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 16px;
+  width: 16px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.custom-checkbox .checkmark {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 16px;
+  width: 16px;
+  background-color: #181C14;
+  border: 2px solid #181C14;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.custom-checkbox input[type="checkbox"]:checked ~ .checkmark {
+  background-color: #ECDFCC;
+  border-color: #ECDFCC;
+}
+
+.custom-checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom-checkbox input[type="checkbox"]:checked ~ .checkmark:after {
+  display: block;
+}
+
+.custom-checkbox .checkmark:after {
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid #181C14;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  content: "";
+}
+
+#checkboxContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="number"][name="number"] {
+  width: 140px; /* Adjust as needed */
+}
+
+.center-radio-group {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  color: #ECDFCC;
+  cursor: pointer;
+}
+
+input[type="radio"].inline {
+  margin-right: 8px;
+  accent-color: #181C14;
+}
+
+.gender-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.gender-label {
+  text-align: center;
+  color: #181C14;
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+.details-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.details-label {
+  color: #181C14;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+textarea#details {
+  background-color: #181C14;
+  color: #ECDFCC;
+  border: 1px solid #181C14;
+  border-radius: 4px;
+  padding: 0.5em;
+  font-family: inherit;
+  font-size: 1em;
+  resize: vertical;
+  width: 260px; /* Adjust as needed */
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  display: block;
+  margin: 1.5em auto 0 auto;
+  padding: 0.7em 2.5em;
+  font-size: 1.15em;
+  background-color: #181C14;
+  color: #ECDFCC;
+  border: 2px solid #ECDFCC;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #ECDFCC;
+  color: #181C14;
+}
+
+
+
+      </style>
+  </head>
+
+  <body>
+
+
+    <br /><br /><br /><br />
+
+    <h1 id="title">Fitness Survey Form</h1>
+
+    <p id="description">Please fill out this form with the required information</p>
+
+<form id="survey-form">
+  <fieldset>
+    <label id="name-label" for="name">Name
+      <input type="text" id="name" class="name" name="name" placeholder="Enter your name" required />
+    </label>
+
+    
+  <div class="gender-section">
+  <div class="gender-label">Gender (required)</div>
+  <div class="center-radio-group">
+    <label for="male" class="radio-label">
+      <input id="male" type="radio" name="gender" class="inline" value="male" required /> Male
+    </label>
+    <label for="female" class="radio-label">
+      <input id="female" type="radio" name="gender" class="inline" value="female" /> Female
+    </label>
+  </div>
+</div>
+
+
+    <label id="email-label" for="email">Email
+      <input type="email" id="email" class="email" name="email" placeholder="Enter your email" required />
+    </label>
+
+    <label id="number-label" for="number">Phone number
+      <input
+        type="number"
+        id="number"
+        name="number"
+        min="10000"
+        max="999999999999999"
+        placeholder="Phone number"
+        required
+      />
+    </label>
+    
+    <label for="age">Age <input type="number" id="age" name="age" min="12" max="100" placeholder="Age" required /></label>
+    
+    
+    <label for="goals">Which option describes best your current goal?
+      <select id="dropdown" required>
+        <option value="">(select one)</option>
+        <option value="performance">Performance Goals</option>
+        <option value="aesthetic">Aesthetic Goals</option>
+        <option value="health">Health and Wellness Goals</option>
+      </select>
+    </label>
+
+    <!-- Add these two checkboxes inside #survey-form, before #checkboxContainer -->
+<div style="display:none;">
+  <input type="checkbox" name="default1" value="default1">
+  <input type="checkbox" name="default2" value="default2">
+</div>
+
+<div id="checkboxContainer" style="margin-top: 20px;"></div>
+
+    <div class="details-section">
+      <label for="details" class="details-label">Details (optional)</label>
+      <textarea id="details" name="details" rows="3" cols="30" placeholder="I would love to accomplish this..."></textarea>
+    </div>
+
+    <input type="submit" id="submit" value="Submit" class="submit-btn" />
+
+<script>
+
+const categorySelect = document.getElementById('dropdown');
+const checkboxContainer = document.getElementById('checkboxContainer');
+
+const optionsMap = {
+  performance: ['Strenght training', 'Endurance', 'Skill Development', 'Competitions'],
+  aesthetic: ['Weight loss', 'Muscle gain', 'Body composition', 'Improved appearance'],
+  health: ['Improved cardiovascular health', 'Increased energy levels', 'Better sleep', 'Reduced stress', 'Enhanced mood', 'Increased mobility', 'Reduced risk of chronic diseases', 'Improved mental clarity', 'Increased self-confidence', 'Better realtionships']
+};
+
+categorySelect.addEventListener('change', function () {
+  const selected = this.value;
+  checkboxContainer.innerHTML = '';
+  if(optionsMap[selected]) {
+    optionsMap[selected].forEach(item => {
+      const label = document.createElement('label');
+      label.style.marginRight = '16px'; // Optional: adds space between checkboxes
+      label.classList.add('custom-checkbox');
+
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.name = 'options';
+      checkbox.value = item; // This sets the value attribute
+
+      const checkmark = document.createElement('span');
+      checkmark.classList.add('checkmark');
+
+      label.appendChild(checkbox);
+      label.appendChild(document.createTextNode(' ' + item));
+      label.appendChild(checkmark);
+
+      checkboxContainer.appendChild(label);
+      checkboxContainer.appendChild(document.createElement('br'));
+    });
+  }
+});
+</script>
+    
+
+
+
+    </fieldset>
+</form>
+  </body>
+
+   
+</html>
