@@ -24,9 +24,7 @@ This project was created to demonstrate form design, layout, accessibility, and 
 
 ## 📸 Screenshot
 
-![Fitness Survey Form Screenshot](Fitness Survey Form IMG.png)
-
-> *(Add your screenshot file as `screenshot.png` in the same repo folder)*
+![Fitness Survey Form Screenshot](screenshotfitness.png)
 
 ## 🌐 Live Demo
 
