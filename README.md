@@ -7,10 +7,7 @@ This is a simple, responsive survey form built using HTML and CSS as part of the
 The **Fitness Survey Form** allows users to enter their personal information and fitness goals. It’s designed to collect data such as:
 
 - Name and contact details
-- Current fitness level
-- Preferred workout types
 - Fitness objectives (e.g. lose weight, build muscle, improve endurance)
-- Availability and workout preferences
 
 By submitting this form, users share their goals and personal data to help personalize a fitness journey.
 
